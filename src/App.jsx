@@ -1,4 +1,5 @@
 import './App.css'
+import HomeScreen from './pages/HomeScreen'
 
 function App() {
 
@@ -6,7 +7,7 @@ function App() {
   return (
     <>
       <div>
-      <h1>Let's Build Netflix</h1>
+      <HomeScreen />
       </div>
       
     </>
