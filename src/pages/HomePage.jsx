@@ -1,10 +1,10 @@
-import "./HomeScreen.css";
+import "./HomePage.css";
 import Navbar from "../Components/Navbar";
 import Banner from "../Components/Banner";
 import requests from "../../utils/request";
 import Row from "../Components/Row";
 
-function HomeScreen() {
+function HomePage() {
   return (
     <div className="homeScreen">
       <Navbar />
@@ -28,4 +28,4 @@ function HomeScreen() {
   );
 }
 
-export default HomeScreen;
+export default HomePage;
