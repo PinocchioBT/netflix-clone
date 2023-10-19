@@ -1,0 +1,20 @@
+.plansPage-plan {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    opacity: 0.8;
+}
+
+.plansPage-plan:hoever {
+    opacity: 1;
+}
+
+.plansPage-plan > button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color : #fff;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #e40914;
+    border: none;
+}
