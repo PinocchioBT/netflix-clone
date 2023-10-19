@@ -4,9 +4,11 @@ import { auth } from "../../utils/firebase";
 import "./ProfilePage.css";
 import PlansPage from "./PlansPage";
 import { selectUser } from "../features/userSlice";
+import { useNavigate } from "react-router";
 
 function ProfilePage() {
   const user = useSelector(selectUser);
+  const navigate = useNavigate()
 
   return (
     <div className="profilePage">
@@ -25,7 +27,10 @@ function ProfilePage() {
               <hr></hr>
               <PlansPage/>
               <button
-                onClick={() => auth.signOut()}
+                onClick={() => auth.signOut()
+                .then(() => {
+                  navigate("/")
+                })}
                 className="profilePage-signOut"
               >
                 Sign Out
