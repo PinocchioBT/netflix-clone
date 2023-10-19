@@ -1,7 +1,7 @@
 
 import { auth } from "../../utils/firebase";
 import "./RegisterPage.css";
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 function RegisterPage() {
 
@@ -10,17 +10,35 @@ function RegisterPage() {
   
 
   const register = (e) => {
-    e.preventDefalut();
+    e.preventDefault();
 
     auth.createUserWithEmailAndPassword(
       emailRef.current.value,
       passwordRef.current.value
     )
+    .then((authUser) => {
+      console.log(authUser)
+    })
+    .catch((error) => {
+      alert(error.message)
+    })
    
   };
 
   const signIn = (e) => {
-    e.preventDefalut();
+    e.preventDefault();
+
+    auth
+    .signInWithEmailAndPassword(
+      emailRef.current.value,
+      passwordRef.current.value  
+    )
+    .then((authUser) => {
+      console.log(authUser)
+    })
+    .catch((error) => {
+      alert(error.message)
+    })
   };
 
   return (
