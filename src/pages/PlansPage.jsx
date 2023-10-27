@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import { loadStripe } from "@stripe/stripe-js";
 
-
 function PlansPage() {
   const [products, setProducts] = useState([]);
   const user = useSelector(selectUser);
@@ -19,9 +18,10 @@ function PlansPage() {
       .then((querySnapshot) => {
         querySnapshot.forEach(async (subscription) => {
           setSubscription({
-            role: subscription.data().role,
+            role: subscription.data().role, //ดูได้จาก firebase role จะมี type บอกและวันที่สมัครและหมดอายุ
             current_period_end: subscription.data().current_period_end.seconds,
-            current_period_start: subscription.data().current_period_start.seconds,
+            current_period_start:
+              subscription.data().current_period_start.seconds,
           });
         });
       });
@@ -48,6 +48,7 @@ function PlansPage() {
   }, []);
 
   console.log("products", products);
+  console.log("subscription", subscription);
 
   const loadCheckout = async (priceId) => {
     const docRef = await db
@@ -76,17 +77,31 @@ function PlansPage() {
 
   return (
     <div className="plansPage">
+      <br/>
+      <p>Renewal Date: {new Date (subscription?.current_period_end * 1000).toLocaleDateString()}</p>
       {Object.entries(products).map(([productId, productData]) => {
+        const isCurrentSubscription = productData.name
+          .includes(subscription.role);
+
         return (
           <>
-            <div className="plansPage-plan">
+            <div 
+            key={productId}
+            className={`${isCurrentSubscription && 
+              "plansPage-plan--disabled" } plansPage-plan`}>
+      
               <div className="plansPage-info">
                 <h5>{productData.name}</h5>
                 <h6>{productData.description}</h6>
               </div>
 
-              <button onClick={() => loadCheckout(productData.prices.priceId)}>
-                Subscribe
+              <button
+                onClick={() =>
+                  !isCurrentSubscription &&
+                  loadCheckout(productData.prices.priceId)
+                }
+              >
+                {isCurrentSubscription ? "Subscribed" : "Subscribe"}
               </button>
             </div>
           </>
