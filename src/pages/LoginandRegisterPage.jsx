@@ -1,5 +1,5 @@
 import { auth } from "../../utils/firebase";
-import "./RegisterPage.css";
+import "./LoginandRegisterPage.css";
 import { useRef } from "react";
 import { Alert } from "antd";
 
