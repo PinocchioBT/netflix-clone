@@ -18,3 +18,7 @@
     background-color: #e40914;
     border: none;
 }
+
+.plansPage-plan--disabled > button {
+   background-color: gray !important;
+}

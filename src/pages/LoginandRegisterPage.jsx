@@ -1,9 +1,10 @@
-
 import { auth } from "../../utils/firebase";
 import "./RegisterPage.css";
 import { useRef } from "react";
+import { Alert } from "antd";
 
 function RegisterPage() {
+
 
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -20,7 +21,7 @@ function RegisterPage() {
       console.log(authUser)
     })
     .catch((error) => {
-      alert(error.message)
+     Alert(error.message)
     })
    
   };
@@ -37,7 +38,7 @@ function RegisterPage() {
       console.log(authUser)
     })
     .catch((error) => {
-      alert(error.message)
+     Alert(error.message)
     })
   };
 

@@ -1,5 +1,5 @@
 import "./LoginPage.css"
-import RegisterPage from "./RegisterPage"
+import RegisterPage from "./LoginandRegisterPage"
 import { useState } from "react"
 
 function LoginPage() {
