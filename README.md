@@ -6,16 +6,11 @@ A Netflix clone web application with features like Stripe Checkout & Webhooks fo
 
 ## Table of Contents
 
-- [Demo](#demo)
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-
-## Demo
-
-You can check out the live demo [here](link_to_live_demo).
 
 ## Features
 
