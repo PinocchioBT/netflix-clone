@@ -1,4 +1,4 @@
-import "./LoginPage.css"
+import "./NewUserPage.css"
 import RegisterPage from "./LoginandRegisterPage"
 import { useState } from "react"
 
