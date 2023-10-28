@@ -1,6 +1,5 @@
 # Netflix Clone
 
-![Netflix Clone Logo]([link_to_logo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fbrand.netflix.com%2Fen%2Fassets%2Flogos%2F&psig=AOvVaw2x0_4CxW-z1krH-_attlil&ust=1698480430723000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLi3hOjilYIDFQAAAAAdAAAAABAI))
 
 A Netflix clone web application with features like Stripe Checkout & Webhooks for payments, Redux for state management, Firestore for database storage, and Google Authentication for user login.
 
@@ -50,11 +49,12 @@ npm install
 
 4. Create a .env file in the root directory and add the necessary environment variables (e.g., API keys, Firebase config):
 ```bash
-REACT_APP_STRIPE_PUBLIC_KEY=your_stripe_public_key
-REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
-REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
-# Add any other environment variables here
+
+REACT_APP_STRIPE_PUBLIC_KEY=pk_test_51O2vwlH0NDIMRLm4nZs3GwFNVb5gidT4tjnUhSwLrZKuCK3u91XYEl071gsELEoXYmd8TIKEjfQPo6dxWLlkoM6R00JMW31Ozi
+REACT_APP_FIREBASE_API_KEY=AIzaSyAW8HCWEXUm1YtRMabQ4awzSBRagczH258
+REACT_APP_FIREBASE_AUTH_DOMAIN=netflix-clone-62b9f.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=netflix-clone-62b9f
+
 ```
 ## Usage
 ```bash
